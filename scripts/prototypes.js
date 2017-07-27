@@ -14,7 +14,7 @@ Array.prototype.countTypes = function(kind) {
   for(var i in this){
     if(this[i].type == kind){
       numKind++;
-    }  
+    }
   }
 
   return numKind;
@@ -143,7 +143,7 @@ Tornado.prototype.toString = function(){
     var list = '';
 
     list += ''; //the category, affected areas, etc.
-    
+
 }
 
 console.log(twister.constructor); //returns the entire function
