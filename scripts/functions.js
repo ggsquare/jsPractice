@@ -3,6 +3,7 @@
 ////////////////////////////////////////
 //Function Declaration
 function findVehicle(name, list){
+
 }
 
 //Function Expression
@@ -14,13 +15,15 @@ function diffOfSquares(a,b){
     return a*a - b*b;
 }
 
-//OR, loads only when program reaches this line, need ; because assignment
+//OR, loads only when program reaches this line, need ; because assignment - I don't think you need semi-colon anymore
 //Anonymous function, just stored in variable name
 var diff = function (a,b){
     return a*a - b*b;
 }; 
 
 console.log(diff(9, 5));
+
+var arr = [1,2,3,4,5];
 
 //Using map function, instead of iterating through
 var results = arr.map(function (elem) {
@@ -65,8 +68,12 @@ var puzzlers = [
   }
  ];
 
+ var func = puzzlers[0];
+
+ console.log(func(5)); //-> 7
+
  //Returning functions from functions
-//Queues, shift pops first cell of array, push pushes elem to end, they both return the elem
+//Queues, 'shift pops' first cell of array, push pushes elem to end, they both return the elem
 function adventureSelector(userChoice) {
   // return anonymous functions inside conditional blocks
   if(userChoice == 1){
@@ -88,13 +95,14 @@ var returnedFunction = adventureSelector(3);
 returnedFunction();
 
 
-//another example of returning functions
+//another example of returning functions, just different syntax and formatting than above ^
 var puzzlers = [
   function(a) { return 8 * a - 10; },
   function(a) { return (a - 3) * (a - 3) * (a - 3); },
   function(a) { return a * a + 4; },
   function(a) { return a % 5; }
 ];
+
 var start = 2;
 
 // build applyAndEmpty function expression here
@@ -102,7 +110,7 @@ var applyAndEmpty = function(input, queue){
   var num;
   var length = queue.length;
   for(var i = 0; i < length; i++){
-      var func = queue[0];
+      var func = queue[0]; //instead of i, because shift later
       num = func(input);
       queue.shift();
   }
